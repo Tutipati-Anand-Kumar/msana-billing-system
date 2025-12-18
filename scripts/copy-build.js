@@ -14,7 +14,7 @@ function copyRecursiveSync(src, dest) {
     const isDirectory = exists && stats.isDirectory();
     if (isDirectory) {
         if (!fs.existsSync(dest)) {
-            fs.mkdirSync(dest);
+            fs.mkdirSync(dest, { recursive: true });
         }
         fs.readdirSync(src).forEach((childItemName) => {
             copyRecursiveSync(path.join(src, childItemName), path.join(dest, childItemName));
@@ -25,6 +25,10 @@ function copyRecursiveSync(src, dest) {
 }
 
 try {
+    if (!fs.existsSync(srcDir)) {
+        console.error(`❌ Error: Source directory ${srcDir} does not exist. Did you run 'npm run build' in the client folder?`);
+        process.exit(1);
+    }
     console.log(`Copying build from ${srcDir} to ${destDir}...`);
     copyRecursiveSync(srcDir, destDir);
     console.log('✅ Build copied successfully.');
