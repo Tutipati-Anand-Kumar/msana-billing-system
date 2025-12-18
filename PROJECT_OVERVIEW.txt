@@ -1,0 +1,100 @@
+mSana Billing System - Project Overview
+=======================================
+
+1. PROJECT SUMMARY
+------------------
+mSana Billing System is a comprehensive web-based application 
+designed for healthcare facilities (Hospitals, Pharmacies)
+ to manage their billing, inventory, and staff workflow. 
+ It streamlines the process of generating invoices, managing
+  product stock (medicines), creating discharge summaries, 
+  and generating sales reports. The system is built with 
+  role-based access control to ensure secure
+   and appropriate access for different staff members.
+
+2. TECHNOLOGY STACK
+-------------------
+*   **Frontend**: React.js (Vite), Tailwind CSS, Lucide React (Icons), Axios, Recharts (Charts).
+*   **Backend**: Node.js, Express.js.
+*   **Database**: MongoDB (Mongoose ODM).
+*   **Authentication**: JWT (JSON Web Tokens).
+
+3. USER ROLES & PERMISSIONS
+---------------------------
+The system defines 5 distinct user roles with specific access rights:
+
+*   **Admin User**:
+    *   Full access to all modules.
+    *   Exclusive ability to User Management (Create/Edit/Delete users).
+    *   Exclusive ability to Delete Products.
+    *   Access to detailed Audit Logs and System Settings.
+*   **Pharmacy Staff**:
+    *   Focuses on medicine sales.
+    *   Access to: Dashboard, Products (View/Edit/Add), Pharmacy Billing, Invoices.
+*   **Hospital Staff**:
+    *   Focuses on general hospital services billing.
+    *   Access to: Dashboard, Products, Billing, Invoices.
+*   **Discharge Staff**:
+    *   Dedicated role for managing patient discharges.
+    *   Access to: Dashboard, Discharge Summary.
+*   **Staff User** (General):
+    *   General purpose access.
+    *   Access to: Dashboard, Billing, Pharmacy Billing, Invoices.
+
+4. KEY MODULES & FEATURES
+-------------------------
+
+A. DASHBOARD
+------------
+*   **Overview**: Provides high-level statistics (Total Sales, Total Invoices, Low Stock Items).
+*   **Visualization**: Graphical representation of sales data and inventory status.
+*   **Alerts**: Quick view of products running low on stock.
+
+B. PRODUCTS / INVENTORY MANAGEMENT
+----------------------------------
+*   **Product Registry**: Manage medicines and hospital supplies (Name, SKU, Generic Name, Batch No, Expiry).
+*   **Stock Management**: Track quantity, strength, and form (Tablet, Syrup, Injection, etc.).
+*   **Role-Based Actions**:
+    *   **Add/Edit**: Available to most staff.
+    *   **Delete**: Restricted to **Admin User** only.
+*   **Search**: robust search by name or SKU.
+
+C. BILLING SYSTEMS
+------------------
+*   **General Billing**: For hospital services and general items.
+*   **Pharmacy Billing**: Specialized for medicine sales, managing batches and expiry dates.
+*   **Invoice Generation**: Creates professional PDF invoices with tax (GST) calculations.
+
+D. INVOICES
+-----------
+*   **History**: A searchable list of all past invoices.
+*   **Details**: View full details of any transaction.
+*   **Print/Download**: Ability to reprint or download past invoices.
+
+E. DISCHARGE SUMMARY
+--------------------
+*   **Patient Management**: Create and manage discharge summaries for patients leaving the facility.
+*   **Documentation**: key medical details types, dates, and doctor notes.
+
+F. REPORTS
+----------
+*   **Sales Reports**: Detailed breakdown of sales over time.
+*   **Inventory Reports**: Stock levels, valuation, and movement.
+*   **Product Sales**: Performance of individual products.
+
+G. USER MANAGEMENT (Admin Only)
+-------------------------------
+*   **Staff Profiles**: Create and manage user accounts for staff members.
+*   **Role Assignment**: Assign specific roles (Pharmacy, Hospital, etc.) to users.
+
+H. SETTINGS & LOGS
+------------------
+*   **Audit Logs**: Tracks important system actions for security and accountability (Admin only).
+*   **System Settings**: Configuration of application preferences.
+
+5. SECURITY FEATURES
+--------------------
+*   **Authentication**: Secure Login with Email/Password.
+*   **Password Security**: Strict password validation (Uppercase, Number, Special Char, Min Length).
+*   **Session Management**: Auto-logout and session timeouts.
+*   **Validation**: Client-side and Server-side validation for inputs.

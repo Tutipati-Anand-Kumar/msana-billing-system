@@ -1,0 +1,10 @@
+node_modules
+.env
+.env.local
+*.log
+.DS_Store
+logs
+seed_log.txt
+debug_login.js
+reset_admin.js
+scripts
