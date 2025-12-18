@@ -168,7 +168,7 @@ invoiceSchema.pre('save', async function (next) {
 });
 
 // Index
-invoiceSchema.index({ invoiceNo: 1 });
+// invoiceNo index is automatically created by unique: true
 invoiceSchema.index({ patientName: 1 });
 invoiceSchema.index({ createdAt: -1 });
 

@@ -59,7 +59,8 @@ const connectToDatabase = async () => {
 
     const opts = {
         bufferCommands: false, // Disable Mongoose buffering
-        serverSelectionTimeoutMS: 5000,
+        serverSelectionTimeoutMS: 30000, // Increased for slower local connections
+        connectTimeoutMS: 30000,
     };
 
     try {
