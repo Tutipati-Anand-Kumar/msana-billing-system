@@ -3,6 +3,6 @@
   "version": "1.0.0",
   "private": true,
   "scripts": {
-    "build": "cd client && npm install && npm run build && cd ../server && npm install"
+    "build": "echo 'Vercel will build client and server based on vercel.json'"
   }
 }
